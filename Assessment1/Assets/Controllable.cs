@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class Controllable : MonoBehaviour
 {
-    Renderer my_renderer;
+    [SerializeField]
+    private Material red;
+    [SerializeField]
+    private Material green;
+    Renderer myrend;
     // Start is called before the first frame update
     void Start()
     {
-        my_renderer = GetComponent<Renderer>();
+        myrend = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -19,12 +23,12 @@ public class Controllable : MonoBehaviour
 
     internal void select()
     {
-        my_renderer.material.color = Color.yellow;
+       myrend.material = green;
     }
 
     internal void unselect()
     {
-        my_renderer.material.color = Color.white;
+        myrend.material = red;
     }
 
 
